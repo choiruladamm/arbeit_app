@@ -4,7 +4,10 @@
 final List<String> sliderImgList = [
   'https://user-images.githubusercontent.com/109071310/203557462-ada25670-4863-4346-b49a-f33ec59f705c.jpg',
   'https://user-images.githubusercontent.com/109071310/203557471-c6351484-3bf5-475a-b332-c2745a2885eb.jpg',
-  'https://user-images.githubusercontent.com/109071310/203557473-3abc59be-06fe-45a6-aa85-1488a8b652e1.jpg'
+  'https://user-images.githubusercontent.com/109071310/203557473-3abc59be-06fe-45a6-aa85-1488a8b652e1.jpg',
+  'https://user-images.githubusercontent.com/109071310/204094245-1bff6736-efd2-4287-82f8-163f05cfca1a.jpg',
+  'https://user-images.githubusercontent.com/109071310/204094441-ad8657d9-6e6d-4c1a-ac94-c16777c4b530.jpg',
+  'https://user-images.githubusercontent.com/109071310/204094522-c10273f0-3276-4860-ba0b-6bdd20775854.jpg'
 ];
 
 // data tab bar builder

@@ -12,6 +12,7 @@ import 'package:arbeit_app/screens/jobdetails_6.dart';
 import 'package:arbeit_app/screens/jobdetails_7.dart';
 import 'package:arbeit_app/screens/jobdetails_8.dart';
 import 'package:arbeit_app/screens/jobdetails_9.dart';
+import 'package:arbeit_app/screens/notifications_pages.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
@@ -55,8 +56,7 @@ class HomePagesState extends State<HomePages> {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => JobDetailsSongo()));
     } else if (index == 9) {
-      Navigator.push(
-          context,
+      Navigator.push(context,
           MaterialPageRoute(builder: (context) => JobDetailsSepuluh()));
     }
   }
@@ -93,17 +93,25 @@ class HomePagesState extends State<HomePages> {
                   ),
                   Row(
                     children: [
-                      Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          color: primaryColorsBackground,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Icon(
-                          Icons.notifications_active,
-                          color: primaryColors,
-                          size: 20.0,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => NotificationsPages()));
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            color: primaryColorsBackground,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Icon(
+                            Icons.notifications_active,
+                            color: primaryColors,
+                            size: 20.0,
+                          ),
                         ),
                       ),
                       SizedBox(width: 5),

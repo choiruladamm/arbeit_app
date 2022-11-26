@@ -4,7 +4,7 @@ Building UI/UX App with FLutter
 
 ## Features
 - Dahsboard Menu
-- Ongoing
+- Detail Jobs
 - Ongoing
 
 ## Inspired by Arbeit UX Case Study on Behance
