@@ -3,6 +3,15 @@
 import 'package:arbeit_app/colors.dart';
 import 'package:arbeit_app/data.dart';
 import 'package:arbeit_app/screens/jobdetails_1.dart';
+import 'package:arbeit_app/screens/jobdetails_10.dart';
+import 'package:arbeit_app/screens/jobdetails_2.dart';
+import 'package:arbeit_app/screens/jobdetails_3.dart';
+import 'package:arbeit_app/screens/jobdetails_4.dart';
+import 'package:arbeit_app/screens/jobdetails_5.dart';
+import 'package:arbeit_app/screens/jobdetails_6.dart';
+import 'package:arbeit_app/screens/jobdetails_7.dart';
+import 'package:arbeit_app/screens/jobdetails_8.dart';
+import 'package:arbeit_app/screens/jobdetails_9.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
@@ -17,12 +26,38 @@ class HomePages extends StatefulWidget {
 class HomePagesState extends State<HomePages> {
   int current = 0;
 
-  void tabJobs(int index){
-    if (index == 0){
+  void tabJobs(int index) {
+    if (index == 0) {
       Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => JobDetailsSiji())
-      );
+          context, MaterialPageRoute(builder: (context) => JobDetailsSiji()));
+    } else if (index == 1) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsLoro()));
+    } else if (index == 2) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsTelu()));
+    } else if (index == 3) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsPapat()));
+    } else if (index == 4) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsLimo()));
+    } else if (index == 5) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsEnem()));
+    } else if (index == 6) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsPitu()));
+    } else if (index == 7) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsWolu()));
+    } else if (index == 8) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => JobDetailsSongo()));
+    } else if (index == 9) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => JobDetailsSepuluh()));
     }
   }
 
@@ -43,7 +78,6 @@ class HomePagesState extends State<HomePages> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             // custom app bar
             Padding(
               padding: EdgeInsets.only(top: 50, left: 20, right: 10),
@@ -297,7 +331,8 @@ class HomePagesState extends State<HomePages> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 0.5,
                               blurRadius: 2,
-                              offset: Offset(1, 1), // changes position of shadow
+                              offset:
+                                  Offset(1, 1), // changes position of shadow
                             ),
                           ],
                         ),
@@ -323,13 +358,15 @@ class HomePagesState extends State<HomePages> {
                                       borderRadius: BorderRadius.circular(8),
                                       image: DecorationImage(
                                         fit: BoxFit.fill,
-                                        image: NetworkImage('${contentRecommended.elementAt(index)['logos']}'),
+                                        image: NetworkImage(
+                                            '${contentRecommended.elementAt(index)['logos']}'),
                                       ),
                                     ),
                                   ),
                                   SizedBox(width: 15),
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         '${contentRecommended.elementAt(index)['jobstitle']}',
@@ -406,8 +443,6 @@ class HomePagesState extends State<HomePages> {
                 },
               ),
             ),
-
-          
           ],
         ),
       ),

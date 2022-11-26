@@ -4,8 +4,8 @@ import 'package:arbeit_app/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:arbeit_app/data.dart';
 
-class JobDetailsSiji extends StatelessWidget {
-  const JobDetailsSiji({super.key});
+class JobDetailsSepuluh extends StatelessWidget {
+  const JobDetailsSepuluh({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class JobDetailsSiji extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
-                          "${contentRecommended.elementAt(0)['logos']}",
+                          "${contentRecommended.elementAt(9)['logos']}",
                           scale: 9,
                         ),
                       ),
@@ -76,7 +76,7 @@ class JobDetailsSiji extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${contentRecommended.elementAt(0)['subjobstitle']}",
+                        "${contentRecommended.elementAt(9)['subjobstitle']}",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -84,7 +84,7 @@ class JobDetailsSiji extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       Text(
-                        "${contentRecommended.elementAt(0)['company']}",
+                        "${contentRecommended.elementAt(9)['company']}",
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 14,
@@ -115,7 +115,7 @@ class JobDetailsSiji extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
                         child: Text(
-                          "${contentRecommended.elementAt(0)['timework']}",
+                          "${contentRecommended.elementAt(9)['timework']}",
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -138,7 +138,7 @@ class JobDetailsSiji extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
                         child: Text(
-                          "${contentRecommended.elementAt(0)['locationwork']}",
+                          "${contentRecommended.elementAt(9)['locationwork']}",
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -161,7 +161,7 @@ class JobDetailsSiji extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
                         child: Text(
-                          "${contentRecommended.elementAt(0)['salary']}",
+                          "${contentRecommended.elementAt(9)['salary']}",
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -190,7 +190,7 @@ class JobDetailsSiji extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
               child: Text(
-                "${contentRecommended.elementAt(0)['jobdesc']}",
+                "${contentRecommended.elementAt(9)['jobdesc']}",
                 style: TextStyle(
                   fontSize: 12,
                 ),
