@@ -2,7 +2,7 @@
 
 import 'package:arbeit_app/colors.dart';
 import 'package:arbeit_app/data.dart';
-import 'package:arbeit_app/widgets/alljobs.dart';
+import 'package:arbeit_app/screens/jobdetails_1.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
@@ -17,9 +17,18 @@ class HomePages extends StatefulWidget {
 class HomePagesState extends State<HomePages> {
   int current = 0;
 
+  void tabJobs(int index){
+    if (index == 0){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => JobDetailsSiji())
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
@@ -34,6 +43,7 @@ class HomePagesState extends State<HomePages> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
             // custom app bar
             Padding(
               padding: EdgeInsets.only(top: 50, left: 20, right: 10),
@@ -275,117 +285,120 @@ class HomePagesState extends State<HomePages> {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 20),
-                    child: Container(
-                      height: 135,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 0.5,
-                            blurRadius: 2,
-                            offset: Offset(1, 1), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                          left: 18,
-                          right: 18,
-                          top: 20,
-                          bottom: 20,
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height: 40,
-                                  width: 40,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: NetworkImage('${contentRecommended.elementAt(index)['logos']}'),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(width: 15),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '${contentRecommended.elementAt(index)['jobstitle']}',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(height: 6),
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              '${contentRecommended.elementAt(index)['salary']}',
-                                              style: TextStyle(
-                                                  fontSize: 10,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: primaryColors),
-                                            ),
-                                            SizedBox(height: 6),
-                                            Text(
-                                              '${contentRecommended.elementAt(index)['location']}',
-                                              style: TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(width: 15),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              '${contentRecommended.elementAt(index)['subjobs']}',
-                                              style: TextStyle(
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.w600,
-                                                color: Colors.grey,
-                                              ),
-                                            ),
-                                            SizedBox(height: 6),
-                                            Text(
-                                              '${contentRecommended.elementAt(index)['jobspost']}',
-                                              style: TextStyle(
-                                                fontSize: 10,
-                                                color: Colors.grey,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Icon(
-                              UniconsSolid.bookmark,
-                              size: 30,
-                              color: primaryColors,
+                    child: GestureDetector(
+                      onTap: () => tabJobs(index),
+                      child: Container(
+                        height: 135,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 0.5,
+                              blurRadius: 2,
+                              offset: Offset(1, 1), // changes position of shadow
                             ),
                           ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 18,
+                            right: 18,
+                            top: 20,
+                            bottom: 20,
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: NetworkImage('${contentRecommended.elementAt(index)['logos']}'),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 15),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '${contentRecommended.elementAt(index)['jobstitle']}',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '${contentRecommended.elementAt(index)['salary']}',
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: primaryColors),
+                                              ),
+                                              SizedBox(height: 6),
+                                              Text(
+                                                '${contentRecommended.elementAt(index)['location']}',
+                                                style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(width: 15),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                '${contentRecommended.elementAt(index)['subjobs']}',
+                                                style: TextStyle(
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                              SizedBox(height: 6),
+                                              Text(
+                                                '${contentRecommended.elementAt(index)['jobspost']}',
+                                                style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: Colors.grey,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Icon(
+                                UniconsSolid.bookmark,
+                                size: 30,
+                                color: primaryColors,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -393,6 +406,8 @@ class HomePagesState extends State<HomePages> {
                 },
               ),
             ),
+
+          
           ],
         ),
       ),

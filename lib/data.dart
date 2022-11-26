@@ -2,10 +2,6 @@
 
 
 // data carousel slider image
-import 'package:arbeit_app/widgets/alljobs.dart';
-import 'package:arbeit_app/widgets/design.dart';
-import 'package:flutter/material.dart';
-
 final List<String> sliderImgList = [
   'https://user-images.githubusercontent.com/109071310/203557462-ada25670-4863-4346-b49a-f33ec59f705c.jpg',
   'https://user-images.githubusercontent.com/109071310/203557471-c6351484-3bf5-475a-b332-c2745a2885eb.jpg',
@@ -21,12 +17,7 @@ List<String> recommendedItems = [
     "Marketing",
   ];
 
-final jobPages = [
-  AllJobsTabBar(),
-  DesignTabBar()
-];
-
-
+// data listviw builder
 final List<Map<String, dynamic>> contentRecommended = [
   {
     "logos": "https://user-images.githubusercontent.com/109071310/203917997-3119e406-944f-441a-bac1-99f4ff064305.png",
@@ -50,6 +41,62 @@ final List<Map<String, dynamic>> contentRecommended = [
     "salary": "\$3.500 - \$4.000 / Month",
     "subjobs": "Javascripts",
     "location": "Tokyo - Full time",
+    "jobspost": "Today",
+  },
+  {
+    "logos": "https://user-images.githubusercontent.com/109071310/204070101-00578c4c-cda1-4e3a-abd9-74c3d0286b20.png",
+    "jobstitle": "Senior Software Engineer at\nNetflix",
+    "salary": "\$2.500 - \$3.000 / Month",
+    "subjobs": "DevOps",
+    "location": "London - (Remote)",
+    "jobspost": "Today",
+  },
+  {
+    "logos": "https://user-images.githubusercontent.com/109071310/204070314-419ce624-330a-4be1-ab1f-e1f599dd893f.png",
+    "jobstitle": "Graphic Designer at\nBMW",
+    "salary": "\$5.500 - \$6.000 / Month",
+    "subjobs": "Adobe Photoshop",
+    "location": "Frankfurt, Germany",
+    "jobspost": "Today",
+  },
+  {
+    "logos": "https://user-images.githubusercontent.com/109071310/204070385-2fd0e322-d882-4c11-b25e-acc8d77d91d8.png",
+    "jobstitle": "Industri Manager at\nGoogle",
+    "salary": "\$1.500 - \$2.500 / Month",
+    "subjobs": "HR",
+    "location": "Jakarta, Indonesia",
+    "jobspost": "Today",
+  },
+  {
+    "logos": "https://user-images.githubusercontent.com/109071310/204070437-69afc42c-f6db-4767-8bd3-c3d54873bbe1.png",
+    "jobstitle": "Full Stack Developer at\nShopee",
+    "salary": "\$5.500 - \$7.500 / Month",
+    "subjobs": "Fullstack",
+    "location": "Surabaya, Indonesia",
+    "jobspost": "Today",
+  },
+  {
+    "logos": "https://user-images.githubusercontent.com/109071310/204070523-1d0bda9a-17ac-4db1-a824-df619c9dfddf.png",
+    "jobstitle": "Senior Business Controller at\nTokopedia",
+    "salary": "\$3.500 - \$4.500 / Month",
+    "subjobs": "Controller",
+    "location": "Semarang - Full time",
+    "jobspost": "Today",
+  },
+  {
+    "logos": "https://user-images.githubusercontent.com/109071310/204070720-5ad795e3-a909-4341-a869-006d068459a5.png",
+    "jobstitle": "Facebook Ads Specialist at\nFacebook",
+    "salary": "\$1.500 - \$2.500 / Month",
+    "subjobs": "Ads",
+    "location": "Jakarta - Full time",
+    "jobspost": "Today",
+  },
+  {
+    "logos": "https://user-images.githubusercontent.com/109071310/204070662-27eb19ab-285c-44f1-8c7a-37a436f7420f.png",
+    "jobstitle": "Back End Developer at\nKominfo Indonesia",
+    "salary": "\$1.000 - \$3.500 / Month",
+    "subjobs": "Ads",
+    "location": "Jakarta - (Remote)",
     "jobspost": "Today",
   },
 ];
