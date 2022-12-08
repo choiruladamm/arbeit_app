@@ -2,17 +2,9 @@
 
 import 'package:arbeit_app/colors.dart';
 import 'package:arbeit_app/data.dart';
-import 'package:arbeit_app/screens/jobdetails_1.dart';
-import 'package:arbeit_app/screens/jobdetails_10.dart';
-import 'package:arbeit_app/screens/jobdetails_2.dart';
-import 'package:arbeit_app/screens/jobdetails_3.dart';
-import 'package:arbeit_app/screens/jobdetails_4.dart';
-import 'package:arbeit_app/screens/jobdetails_5.dart';
-import 'package:arbeit_app/screens/jobdetails_6.dart';
-import 'package:arbeit_app/screens/jobdetails_7.dart';
-import 'package:arbeit_app/screens/jobdetails_8.dart';
-import 'package:arbeit_app/screens/jobdetails_9.dart';
+import 'package:arbeit_app/screens/job_details.dart';
 import 'package:arbeit_app/screens/notifications_pages.dart';
+import 'package:arbeit_app/screens/saved_pages.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
@@ -26,40 +18,7 @@ class HomePages extends StatefulWidget {
 
 class HomePagesState extends State<HomePages> {
   int current = 0;
-
-  void tabJobs(int index) {
-    if (index == 0) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsSiji()));
-    } else if (index == 1) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsLoro()));
-    } else if (index == 2) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsTelu()));
-    } else if (index == 3) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsPapat()));
-    } else if (index == 4) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsLimo()));
-    } else if (index == 5) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsEnem()));
-    } else if (index == 6) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsPitu()));
-    } else if (index == 7) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsWolu()));
-    } else if (index == 8) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => JobDetailsSongo()));
-    } else if (index == 9) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => JobDetailsSepuluh()));
-    }
-  }
+  int savedIcons = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -118,10 +77,18 @@ class HomePagesState extends State<HomePages> {
                       SizedBox(
                         height: 40,
                         width: 40,
-                        child: Icon(
-                          UniconsLine.align_right,
-                          color: primaryColors,
-                          size: 25.0,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SavedPages())
+                            );
+                          },
+                          child: Icon(
+                            UniconsLine.bookmark,
+                            color: primaryColors,
+                            size: 25.0,
+                          ),
                         ),
                       ),
                     ],
@@ -328,7 +295,9 @@ class HomePagesState extends State<HomePages> {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 20),
                     child: GestureDetector(
-                      onTap: () => tabJobs(index),
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => JobDetails(jobDetail: contentRecommended[index])));
+                      },
                       child: Container(
                         height: 135,
                         decoration: BoxDecoration(
@@ -437,10 +406,17 @@ class HomePagesState extends State<HomePages> {
                                   ),
                                 ],
                               ),
-                              Icon(
-                                UniconsSolid.bookmark,
-                                size: 30,
-                                color: primaryColors,
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    savedIcons = index;
+                                  });
+                                },
+                                child: Icon(
+                                  savedIcons == index ? UniconsSolid.bookmark : UniconsLine.bookmark,
+                                  size: 30,
+                                  color: primaryColors,
+                                ),
                               ),
                             ],
                           ),

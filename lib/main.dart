@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:arbeit_app/screens/home_pages.dart';
+import 'package:arbeit_app/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Axiforma'
       ),
-      home: HomePages(),
+      home: SplashScreen(),
     );
   }
 }

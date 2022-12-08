@@ -1,15 +1,21 @@
 // ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:arbeit_app/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:arbeit_app/data.dart';
 
-class JobDetailsEnem extends StatelessWidget {
-  const JobDetailsEnem({super.key});
+class JobDetails extends StatefulWidget {
+  final jobDetail;
+  const JobDetails({super.key, this.jobDetail});
 
   @override
+  State<JobDetails> createState() => _JobDetailsState();
+}
+
+class _JobDetailsState extends State<JobDetails> {
+  @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -37,17 +43,20 @@ class JobDetailsEnem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      color: primaryColorsBackground,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Icon(
-                      Icons.bookmark,
-                      color: primaryColors,
-                      size: 20.0,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: primaryColorsBackground,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Icon(
+                        Icons.bookmark_outline,
+                        color: primaryColors,
+                        size: 20.0,
+                      ),
                     ),
                   ),
                 ],
@@ -65,7 +74,7 @@ class JobDetailsEnem extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
-                          "${contentRecommended.elementAt(5)['logos']}",
+                          widget.jobDetail['logos'],
                           scale: 9,
                         ),
                       ),
@@ -76,7 +85,7 @@ class JobDetailsEnem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "${contentRecommended.elementAt(5)['subjobstitle']}",
+                        widget.jobDetail['subjobstitle'],
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -84,7 +93,7 @@ class JobDetailsEnem extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       Text(
-                        "${contentRecommended.elementAt(5)['company']}",
+                        widget.jobDetail['company'],
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 14,
@@ -97,7 +106,7 @@ class JobDetailsEnem extends StatelessWidget {
               ),
             ),
 
-            // jobdesc
+            // // jobdesc
             Padding(
               padding: const EdgeInsets.only(left: 27, top: 5),
               child: Column(
@@ -115,7 +124,7 @@ class JobDetailsEnem extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
                         child: Text(
-                          "${contentRecommended.elementAt(5)['timework']}",
+                          widget.jobDetail['timework'],
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -138,7 +147,7 @@ class JobDetailsEnem extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
                         child: Text(
-                          "${contentRecommended.elementAt(5)['locationwork']}",
+                          widget.jobDetail['locationwork'],
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -161,7 +170,7 @@ class JobDetailsEnem extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
                         child: Text(
-                          "${contentRecommended.elementAt(5)['salary']}",
+                          widget.jobDetail['salary'],
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -190,7 +199,7 @@ class JobDetailsEnem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
               child: Text(
-                "${contentRecommended.elementAt(5)['jobdesc']}",
+                widget.jobDetail['jobdesc'],
                 style: TextStyle(
                   fontSize: 12,
                 ),
@@ -209,7 +218,7 @@ class JobDetailsEnem extends StatelessWidget {
               ),
             ),
 
-            // reuirement list text
+            // // requirement list text
             Padding(
               padding: const EdgeInsets.only(left: 27, top: 15),
               child: Column(
@@ -397,7 +406,7 @@ class JobDetailsEnem extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

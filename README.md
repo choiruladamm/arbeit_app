@@ -3,6 +3,7 @@
 Building UI/UX App with FLutter
 
 ## Features
+- Splash Screen
 - Dahsboard Menu
 - Detail Jobs
 - Ongoing
