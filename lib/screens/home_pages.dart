@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:arbeit_app/colors.dart';
-import 'package:arbeit_app/data.dart';
-import 'package:arbeit_app/screens/job_details.dart';
+import 'package:arbeit_app/widgets/colors.dart';
+import 'package:arbeit_app/widgets/data.dart';
+import 'package:arbeit_app/screens/job_details_pages.dart';
 import 'package:arbeit_app/screens/notifications_pages.dart';
 import 'package:arbeit_app/screens/saved_pages.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -283,7 +283,7 @@ class HomePagesState extends State<HomePages> {
               ),
             ),
 
-            // content
+            // job content
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: ListView.builder(
@@ -427,6 +427,7 @@ class HomePagesState extends State<HomePages> {
                 },
               ),
             ),
+          
           ],
         ),
       ),

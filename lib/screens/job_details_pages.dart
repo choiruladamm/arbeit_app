@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_typing_uninitialized_variables
 
-import 'package:arbeit_app/colors.dart';
+import 'package:arbeit_app/widgets/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:arbeit_app/data.dart';
+import 'package:arbeit_app/widgets/data.dart';
 
 class JobDetails extends StatefulWidget {
   final jobDetail;
@@ -27,21 +27,33 @@ class _JobDetailsState extends State<JobDetails> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        color: primaryColorsBackground,
-                        borderRadius: BorderRadius.circular(15),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            color: primaryColorsBackground,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Icon(
+                            Icons.arrow_back_ios_new,
+                            color: primaryColors,
+                            size: 20.0,
+                          ),
+                        ),
                       ),
-                      child: Icon(
-                        Icons.arrow_back_ios_new,
-                        color: primaryColors,
-                        size: 20.0,
+                      SizedBox(width: 20),
+                      Text(
+                        'Job Details',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                   GestureDetector(
                     onTap: () {},
@@ -362,6 +374,7 @@ class _JobDetailsState extends State<JobDetails> {
               ),
             ),
 
+            // button
             Padding(
               padding: const EdgeInsets.only(
                   left: 20, right: 20, top: 30, bottom: 20),

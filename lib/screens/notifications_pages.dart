@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:arbeit_app/colors.dart';
-import 'package:arbeit_app/data.dart';
+import 'package:arbeit_app/widgets/colors.dart';
+import 'package:arbeit_app/widgets/data.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsPages extends StatelessWidget {
@@ -42,7 +42,7 @@ class NotificationsPages extends StatelessWidget {
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

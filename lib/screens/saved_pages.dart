@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:arbeit_app/colors.dart';
+import 'package:arbeit_app/widgets/colors.dart';
 import 'package:flutter/material.dart';
 
 class SavedPages extends StatefulWidget {
@@ -39,14 +39,12 @@ class _SavedPagesState extends State<SavedPages> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
-                      child: Text(
-                        'Saved Jobs',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                        ),
+                    SizedBox(width: 20),
+                    Text(
+                      'Saved Jobs',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:arbeit_app/root_pages.dart';
+import 'package:arbeit_app/screens/root_pages.dart';
 import 'package:arbeit_app/screens/home_pages.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:arbeit_app/colors.dart';
+import 'package:arbeit_app/widgets/colors.dart';
 import 'package:arbeit_app/screens/applicants_pages.dart';
 import 'package:arbeit_app/screens/home_pages.dart';
 import 'package:flutter/cupertino.dart';
