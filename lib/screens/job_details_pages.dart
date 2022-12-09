@@ -1,19 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:arbeit_app/screens/submit_job_pages.dart';
 import 'package:arbeit_app/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:arbeit_app/widgets/data.dart';
 
-class JobDetails extends StatefulWidget {
+class JobDetailsPages extends StatefulWidget {
   final jobDetail;
-  const JobDetails({super.key, this.jobDetail});
+  const JobDetailsPages({super.key, this.jobDetail});
 
   @override
-  State<JobDetails> createState() => _JobDetailsState();
+  State<JobDetailsPages> createState() => _JobDetailsPagesState();
 }
 
-class _JobDetailsState extends State<JobDetails> {
+class _JobDetailsPagesState extends State<JobDetailsPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -381,20 +382,25 @@ class _JobDetailsState extends State<JobDetails> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 50,
-                    width: 165,
-                    decoration: BoxDecoration(
-                      color: primaryColors,
-                      borderRadius: BorderRadius.circular(13),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Apply Now',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SubmitJobPages(submitJob: contentRecommended)));
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 165,
+                      decoration: BoxDecoration(
+                        color: primaryColors,
+                        borderRadius: BorderRadius.circular(13),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Apply Now',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),

@@ -1,6 +1,6 @@
 # Arbeit UI (Job Finder)
 
-Building UI/UX App with FLutter
+Arbeit APP Job Finder: Building UI/UX App with FLutter
 
 ## Features
 - Splash Screen

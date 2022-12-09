@@ -296,7 +296,7 @@ class HomePagesState extends State<HomePages> {
                     padding: const EdgeInsets.only(bottom: 20),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => JobDetails(jobDetail: contentRecommended[index])));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => JobDetailsPages(jobDetail: contentRecommended[index])));
                       },
                       child: Container(
                         height: 135,

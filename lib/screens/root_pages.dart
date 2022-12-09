@@ -20,7 +20,7 @@ class _RootPagesState extends State<RootPages> {
   final pageNav = [
     HomePages(),
     ApplicantsPages(),
-    SearchPages(),
+    MessagesPages(),
     ProfilePages(),
   ];
 
@@ -74,8 +74,8 @@ class _RootPagesState extends State<RootPages> {
   }
 }
 
-class SearchPages extends StatelessWidget {
-  const SearchPages({super.key});
+class MessagesPages extends StatelessWidget {
+  const MessagesPages({super.key});
 
   @override
   Widget build(BuildContext context) {
