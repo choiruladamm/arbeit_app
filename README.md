@@ -9,7 +9,7 @@ Arbeit App Job Finder: Building UI/UX App with FLutter
 - Ongoing
 
 ## Inspired by Arbeit UX Case Study on Behance
-https://www.behance.net/gallery/151279893/Arbeit-UX-Case-Study?tracking_source=search_projects%7Cjob+finder+app+ui
+https://www.behance.net/gallery/151279893/Arbeit-UX-Case-Study/
 
 ![Arbeit UX Case Study on Behance](https://user-images.githubusercontent.com/109071310/203697815-b9d41923-da04-42a2-9da3-50850066d2f4.png)
 
