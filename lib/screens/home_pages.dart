@@ -1,12 +1,17 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_local_variable
 
+import 'package:arbeit_app/models/userModel.dart';
+import 'package:arbeit_app/screens/applicants_pages.dart';
 import 'package:arbeit_app/widgets/colors.dart';
 import 'package:arbeit_app/widgets/data.dart';
 import 'package:arbeit_app/screens/job_details_pages.dart';
 import 'package:arbeit_app/screens/notifications_pages.dart';
 import 'package:arbeit_app/screens/saved_pages.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:english_words/english_words.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:unicons/unicons.dart';
 
 class HomePages extends StatefulWidget {
@@ -23,6 +28,7 @@ class HomePagesState extends State<HomePages> {
   @override
   Widget build(BuildContext context) {
     // var size = MediaQuery.of(context).size;
+    final words = nouns.take(50).toList();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
@@ -80,12 +86,32 @@ class HomePagesState extends State<HomePages> {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => SavedPages())
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SavedPages()));
                           },
                           child: Icon(
                             UniconsLine.bookmark,
+                            color: primaryColors,
+                            size: 25.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 5),
+                      SizedBox(
+                        height: 40,
+                        width: 40,
+                        child: GestureDetector(
+                          onTap: () async {
+                            final users =
+                                await Hive.openBox<UserModel>('users');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ApplicantsPages()));
+                          },
+                          child: Icon(
+                            CupertinoIcons.bag,
                             color: primaryColors,
                             size: 25.0,
                           ),
@@ -296,7 +322,11 @@ class HomePagesState extends State<HomePages> {
                     padding: const EdgeInsets.only(bottom: 20),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => JobDetailsPages(jobDetail: contentRecommended[index])));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => JobDetailsPages(
+                                    jobDetail: contentRecommended[index])));
                       },
                       child: Container(
                         height: 135,
@@ -413,7 +443,7 @@ class HomePagesState extends State<HomePages> {
                                   });
                                 },
                                 child: Icon(
-                                  savedIcons == index ? UniconsSolid.bookmark : UniconsLine.bookmark,
+                                  UniconsLine.bookmark,
                                   size: 30,
                                   color: primaryColors,
                                 ),
@@ -427,7 +457,6 @@ class HomePagesState extends State<HomePages> {
                 },
               ),
             ),
-          
           ],
         ),
       ),

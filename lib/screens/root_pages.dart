@@ -19,7 +19,7 @@ class RootPages extends StatefulWidget {
 class _RootPagesState extends State<RootPages> {
   final pageNav = [
     HomePages(),
-    ApplicantsPages(),
+    ApplyPages(),
     MessagesPages(),
     ProfilePages(),
   ];
@@ -70,6 +70,23 @@ class _RootPagesState extends State<RootPages> {
         ),
       ),
       body: pageNav.elementAt(selectedIndex),
+    );
+  }
+}
+
+class ApplyPages extends StatelessWidget {
+  const ApplyPages({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        '',
+        style: TextStyle(
+          fontSize: 35,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
